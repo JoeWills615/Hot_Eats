@@ -37,6 +37,17 @@ var waitlist = {
 
 // Routes
 // ===========================================================
+app.get("/", function (req, res) {
+    res.send("HOT_EAT!");
+});
+
+app.get("/reservation", function (req, res) {
+    res.json(reservation);
+});
+
+app.get("/waitlist", function (req, res) {
+    res.json(waitlist);
+});
 
 
 // Create a new Express route that leads users to the new Obi Wan Kenobi Data
