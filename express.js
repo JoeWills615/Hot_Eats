@@ -14,22 +14,16 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 
-// Data Starwars array of object as example
+// Data array of object as example
 // ===========================================================
-// var yoda = {
-//     name: "Yoda",
-//     role: "Jedi Master",
-//     age: 900,
-//     forcePoints: 2000
-// };
-
 var reservation = [{
     routeName: "chrisferguson",
     name: "Chris Ferguson",
     phone: 1234567890,
     email: "me@gmail.com",
     uniqueId: 1
-}, ];
+}, 
+];
 
 var waitlist = [{
     routeName: "ryanferguson"
@@ -37,12 +31,13 @@ var waitlist = [{
     phone: 1234567800,
     email: "u@gmail.com",
     uniqueId: 2
-}, ];
+}, 
+];
 
 // Routes
 // ===========================================================
 app.get("/", function (req, res) {
-    res.send("HOT_EAT!");
+    res.sendFile(path.join(__dirname, "HOT_EAT.html"));
 });
 
 app.get("/reservation", function (req, res) {
