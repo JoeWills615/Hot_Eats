@@ -25,6 +25,10 @@ var reservation = [{
 }, 
 ];
 
+var tables = [{
+
+}];
+
 var waitlist = [{
     routeName: "ryanferguson"
     name: "Ryan Ferguson",
@@ -70,15 +74,20 @@ app.post("/api/reservation", function (req, res) {
     newReservation.email = parseInt(newReservation.email);
     newReservation.uniqueId = parseInt(newReservation.uniqueId);
 
-
     console.log(newReservation);
+    if () {
+        tables.length <= 5;
+        tables.push(newReservation);
+        res.json(newReservation);
+    } else {
+        waitlist.push(newReservation);
+        res.json(newReservation);
+    }
+    
 
-    reservation.push(newReservation);
+    
 
-    res.json(newReservation);
 });
-
-
 // Listener
 // ===========================================================
 app.listen(PORT, function () {
