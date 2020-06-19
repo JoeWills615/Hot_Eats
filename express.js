@@ -37,14 +37,23 @@ var waitlist = [{
 // Routes
 // ===========================================================
 app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "HOT_EAT.html"));
+    res.sendFile(path.join(__dirname, "index.html"));
 });
 
-app.get("/reservation", function (req, res) {
+app.get("/reservation", function(req, res) {
+    res.sendFile(path.join(__dirname, "reservation.html"));
+});
+
+app.get("/tables", function(req, res) {
+    res.sendFile(path.join(__dirname, "tables.html"));
+});
+
+
+app.get("/api/tables", function (req, res) {
     res.json(reservation);
 });
 
-app.get("/waitlist", function (req, res) {
+app.get("/api/waitlist", function (req, res) {
     res.json(waitlist);
 });
 
